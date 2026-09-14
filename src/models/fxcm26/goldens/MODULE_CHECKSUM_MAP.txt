@@ -1,0 +1,86 @@
+# fxcm_v26 per-module checksum ownership map (dict-loaded)
+# module : slots[a..b] : pcs_dict.raw[a] (first-slot raw checksum)
+# After porting module K bit-exact, ALL its slots' raw checksums must match.
+maps1 [StationaryMap]              slots[  0..  1] n= 2  raw[0]=62c34110176bbda5  prob[0]=83baff33cceb6b2b
+maps2 [StationaryMap]              slots[  2..  3] n= 2  raw[2]=89dfb73fe3c3f105  prob[2]=aec0c1aaffc29a55
+scmA[0] [SSCM]                     slots[  4..  4] n= 1  raw[4]=7897445cac4d3097  prob[4]=2d1fa0a37dccb796
+scmA[1] [SSCM]                     slots[  5..  5] n= 1  raw[5]=b5c21895e0684c8a  prob[5]=4250f1b08f8e4230
+scmA[2] [SSCM]                     slots[  6..  6] n= 1  raw[6]=cd71746cfe06769d  prob[6]=27d35242e3926a36
+MatchModel2mix                     slots[  7.. 13] n= 7  raw[7]=fd0dc83f808d25ed  prob[7]=239554fcc1cbe1ae
+cmC2[0] CM3 C3 sk1 STA6            slots[ 14.. 25] n=12  raw[14]=0e6d25599a75b6ba  prob[14]=323615b263ea8922
+cmC2[1] CM3 C1 sk0 STA6            slots[ 26.. 28] n= 3  raw[26]=fb1f70f0a271c6bc  prob[26]=99facc1091d873af
+cmC2[2] CM3 C1 sk0 STA6            slots[ 29.. 31] n= 3  raw[29]=4ef56975101ec67d  prob[29]=f9cebfd9d1d61a82
+cmC2[3] CM3 C1 sk0 STA6            slots[ 32.. 34] n= 3  raw[32]=07ff784d25e817b9  prob[32]=e07d6ccae946b880
+cmC2[4] CM3 C2 sk1 STA6            slots[ 35.. 42] n= 8  raw[35]=ce293f971cce094e  prob[35]=984c3884ece4c8ab
+cmC2[5] CM3 C6 sk1 STA6            slots[ 43.. 66] n=24  raw[43]=d630f6968c5f6cb7  prob[43]=8aad97699eaf7db4
+cmC2[6] CM3 C1 sk1 STA1            slots[ 67.. 70] n= 4  raw[67]=a642cbe03640916c  prob[67]=dd67f43f4162620c
+cmC2[7] CM3 C1 sk1 STA5            slots[ 71.. 74] n= 4  raw[71]=35c3bd9a92f218f8  prob[71]=3bd2efa5d8645c96
+cmC2[8] CM3 C4 sk1 STA4            slots[ 75.. 90] n=16  raw[75]=1c779c984db05fca  prob[75]=0112ac4bfdbf10d6
+cmC4[0] CM4 C2 sk0 STA6            slots[ 91.. 94] n= 4  raw[91]=a1bd0bfb2a005ace  prob[91]=03cd849ed90efeff
+cmC4[1] CM4 C3 sk1 STA7            slots[ 95..103] n= 9  raw[95]=f0491c8be94ae982  prob[95]=54b43b76079c6fe3
+cmC4[2] CM4 C4 sk1 STA2            slots[104..115] n=12  raw[104]=51f5d076f37fb11e  prob[104]=0f598cab58a1bc08
+cmC4[4] CM4 C6 sk1 STA7            slots[116..133] n=18  raw[116]=4e9b594dab2792ed  prob[116]=6d624035612982c9
+cmC[0] CM3 C7 sk1 STA2             slots[134..161] n=28  raw[134]=cab874a0e33650a7  prob[134]=28d412ffd921fba7
+cmC[1] CM3 C3 sk0 STA5             slots[162..170] n= 9  raw[162]=0000000000000000  prob[162]=e7966d83afe2ae30
+cmC[2] CM3 C2 sk0 STA2             slots[171..176] n= 6  raw[171]=1908189db64a3162  prob[171]=8cabc1c8fc738490
+cmC4[3] CM4 C2 sk0 STA1            slots[177..180] n= 4  raw[177]=a2d4c2a58b1c898e  prob[177]=5ce19bd8e26f6ace
+cmC2[9] CM3 C4 sk1 STA6            slots[181..196] n=16  raw[181]=b594b5e3ebc43c8d  prob[181]=3523f61fd906f69b
+cmC2[10] CM3 C6 sk1 STA5           slots[197..220] n=24  raw[197]=e8c459018d9ad5c0  prob[197]=77f350d5beabb6ce
+cmC2[11] CM3 C5 sk1 STA5           slots[221..240] n=20  raw[221]=8026d0adc92a9998  prob[221]=00aa42ab17eb6bd1
+cmC2[12] CM3 C2 sk1 STA6           slots[241..248] n= 8  raw[241]=2ab7094f4dee6dbf  prob[241]=cf95c02ea749af94
+cmC44 CM3 C4 sk1 STA2              slots[249..264] n=16  raw[249]=50476b417227ed20  prob[249]=f92a689c5e9a07b4
+cmC2[13] CM3 C2 sk1 STA6           slots[265..272] n= 8  raw[265]=5e1fd4a296587676  prob[265]=8d4b18332f3a0762
+cmC[3] CM3 C2 sk1 STA2             slots[273..280] n= 8  raw[273]=6905a61ea54f4aac  prob[273]=91ad58ac76feebb3
+cmC2[14] CM3 C1 sk1 STA6           slots[281..284] n= 4  raw[281]=dd03d2981c0f3ab5  prob[281]=e428938c06e57c8d
+cmC2[15] CM3 C1 sk0 STA1           slots[285..287] n= 3  raw[285]=b3f54c9ac3757b2b  prob[285]=66caa90199db6009
+cmC[4] CM3 C1 sk1 STA1             slots[288..291] n= 4  raw[288]=a814182b2aa297c4  prob[288]=049d864ac617f056
+cmC[5] CM3 C1 sk1 STA1             slots[292..295] n= 4  raw[292]=a36f32af783913cf  prob[292]=74c76d912093f578
+cmC2[16] CM3 C1 sk1 STA6           slots[296..299] n= 4  raw[296]=be8a63a35957474d  prob[296]=64bfecf6e6c565db
+cmC2[17] CM3 C2 sk1 STA6           slots[300..307] n= 8  raw[300]=84a0a04f7cf619a3  prob[300]=fdc328c7fdae266a
+cmC2[19] CM3 C1 sk1 STA6           slots[308..311] n= 4  raw[308]=d025d0c0587e91ad  prob[308]=156eea785c80e81e
+cmC4[6] CM4 C1 sk0 STA6            slots[312..313] n= 2  raw[312]=f641173c4d8f935a  prob[312]=87c5acb417e73fbe
+cmC4[7] CM4 C4 sk1 STA2            slots[314..325] n=12  raw[314]=6a377a6ecfa3db06  prob[314]=b2e1be28cc987e37
+cmC4[8] CM4 C2 sk1 STA2            slots[326..331] n= 6  raw[326]=6f6e6ad6cb57c101  prob[326]=b6c212c8c747429e
+cmC2[18] CM3 C5 sk1 STA6           slots[332..351] n=20  raw[332]=bea45812353dc242  prob[332]=5361da7238d9f6b9
+cmC2[20] CM3 C3 sk1 STA6           slots[352..363] n=12  raw[352]=2a871dbdbbb829e2  prob[352]=ead8ac7cbc741533
+cmCR[0] CM4 C1 sk1 STA7            slots[364..366] n= 3  raw[364]=0d6b424ae3734293  prob[364]=47f7c8f370ff99a8
+cmCR[1] CM4 C1 sk1 STA2            slots[367..369] n= 3  raw[367]=b3d6381cbd9c3c08  prob[367]=a196f977f00145a5
+cmCR[2] CM4 C1 sk0 STA6            slots[370..371] n= 2  raw[370]=346726ef9ef9764a  prob[370]=408146bfd45ae15b
+cmcr[0] CM3 C2 sk1 STA2            slots[372..379] n= 8  raw[372]=05c7b93d7fb6ed57  prob[372]=1b0465984234de2b
+cmcr[1] CM3 C3 sk0 STA6            slots[380..388] n= 9  raw[380]=c2bf87da0196840d  prob[380]=582f0d85b78c2f2e
+cmcr[2] CM3 C3 sk0 STA6            slots[389..397] n= 9  raw[389]=a181564190c06e39  prob[389]=e66f89da40320b52
+cmcr[3] CM3 C3 sk0 STA6            slots[398..406] n= 9  raw[398]=2ddff60b57bb50ab  prob[398]=a8a08fa7e319f601
+cmcr[4] CM3 C3 sk0 STA6            slots[407..415] n= 9  raw[407]=132d7d90b3ed2690  prob[407]=c92d1b01b0927a57
+cmcr[5] CM3 C3 sk0 STA6            slots[416..424] n= 9  raw[416]=194a9da8ec3702f8  prob[416]=b88ceba7caaae970
+cmcr[6] CM3 C3 sk0 STA6            slots[425..433] n= 9  raw[425]=5b541530d434b6e7  prob[425]=0780d735d5d6dbcb
+cmcr[7] CM3 C3 sk0 STA6            slots[434..442] n= 9  raw[434]=4e7c3e1ad978dc87  prob[434]=0ed7d54146449f98
+cmcr[8] CM3 C3 sk0 STA6            slots[443..451] n= 9  raw[443]=9a73f3c80fd2bf0e  prob[443]=4ef2b90995e99d7a
+cmcr2[0] CM3 C3 sk0 STA6           slots[452..460] n= 9  raw[452]=6d1e2df1bf651d37  prob[452]=4b8fa96ac6c31d25
+cmcr2[1] CM3 C3 sk0 STA6           slots[461..469] n= 9  raw[461]=8fc11d8fc9a0ae1b  prob[461]=81406d15771c9afb
+cmcr2[2] CM3 C3 sk0 STA6           slots[470..478] n= 9  raw[470]=ac7621ec87ad2623  prob[470]=12a32b63ec9f191e
+cmcr2[3] CM3 C3 sk0 STA6           slots[479..487] n= 9  raw[479]=294429e4c4791fcb  prob[479]=c5ca8282e146531d
+rcmA[0] RunContextMap              slots[488..488] n= 1  raw[488]=47d01ecf5cb74336  prob[488]=e8307086448b23c6
+dcsm DSM                           slots[489..489] n= 1  raw[489]=4af0b15f78c8b7da  prob[489]=3c349686bd54434f
+dcsm0 DSM                          slots[490..490] n= 1  raw[490]=fe0b7447d2257e32  prob[490]=9b9f0e4a409f2f74
+dcsm1 DSM                          slots[491..491] n= 1  raw[491]=7c0c0771e0ad78bc  prob[491]=59fb67c8c69df91e
+dcsm2 DSM                          slots[492..492] n= 1  raw[492]=e6d48421954cfe96  prob[492]=4baaed1257cb0b39
+dcsmN DSM                          slots[493..493] n= 1  raw[493]=0121f5dd079c7cb1  prob[493]=1f3d8cf81ae31a05
+bias(64)                           slots[494..494] n= 1  raw[494]=8932ba4d4c0c8521  prob[494]=68f53f4709fa420f
+mixer p1 outputs (17 L0 + 6 L1)    slots[495..517] n=23  raw[495]=310774cfc312812d  prob[495]=9bef06c2cff1da45
+SSE/APM chain                      slots[518..524] n= 7  raw[518]=e3e8f7fe84d95f81  prob[518]=4342919b71beb11b
+# total active slots = 525 (== M_ACTIVE 525); slots 525..559 unused (raw=0)
+
+# --- Session 10 addendum (2026-07-01) ---
+# The prior driver_v26.cpp fold convention was LOST with /tmp/cmix-lex-oracle; the
+# recorded totals (no-dict 0xc1881ea23b14635c, dict 0xbb4c38eaffb8d02b) could not be
+# reproduced by any natural fold of RawPredictions() (tested u16/s32 x inactive
+# {0,2048,skip,stale}). The per-slot pcs_dict.* tables use that lost convention too
+# (slot warmup shifting makes them non-reproducible slot-wise).
+# NEW CANONICAL CONVENTION (v26-port-tools/slotdump.cpp, oracle rebuilt from
+# ref/cmix-lex fxcmv1.cpp — same verified source):
+#   per bit, for i in 0..560: raw_v = i<ActivePredictions() ? (U32)(U16)raw[i] : 0
+#                             prob_v = i<ac ? f32bits(RawPredictionProbability(raw[i])) : 0
+#   cs = cs*1000003 + v   (per-slot tables pcs_nodict.{raw,prob} + totals)
+#   NO-DICT totals: RAW 0x91521e61b9ea0014  PROB 0xeaff4f0c1b584348  (bits=120056)
+# Step E's no-dict gate is RAW 0x91521e61b9ea0014 under THIS convention; regenerate
+# the dict tables with slotdump (with .dict) when the no-dict gate passes.

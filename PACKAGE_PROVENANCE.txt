@@ -1,0 +1,32 @@
+zmix HPJA submission source package
+source_ref:     zmix-1.0
+overlay_ref:    zmix-1.0
+overlay_files:  construct_ship.sh SHIP_RECIPE.env tools/build_armc_prefix.sh README.md writeup.md LICENSE NOTICE.md THIRD_PARTY_LICENSES.md THIRD-PARTY-NOTICES.md LICENSES/GPL-3.0.txt README-SUBMISSION.md docs/ALGORITHMIC-IDEAS.md docs/USAGE.md
+engine_src_pin: 337bf7f326d3dd0d (SHIP_RECIPE.env ZMIX_SRC_DIGEST, asserted on the STAGED tree)
+tf_weights:     assets/6m-q4-fp32-t1lambda1.tfwc3 sha256=8e8ef3acacfb84437868035923bf9987f9adc826d2c833fb828204d2ab9c807d (an asset; NOT covered by ZMIX_SRC_DIGEST)
+artifact:       zmix 1.0 (zmix-1.0), run the Form-1 enwik9 pair of these bytes: no-argument ./comp9 reading ./enwik9 in an otherwise empty directory -> archive9.exe, then no-argument ./archive9.exe -> data9, compared against enwik9.
+runtime_policy: strict — this entry satisfies the harness's DEFAULT
+                strict policy and does NOT request --runtime-exec-policy process-tree.
+                The UPX stub unpacks in memory and jumps (memfd_create + mmap + jmp);
+                neither comp9 nor archive9.exe performs any execve/execveat, and
+                neither forks: the process tree is one process.
+hpja_pin:       0bf7580ebe358b80ffc679f7863feaf1ebef88ea "Enforce cold-cache formal runs"
+package_mode:   lean (build inputs + judge-facing documents only)
+excluded:       submission/ (per ENTRANT_INSTRUCTIONS §3); 25 unreferenced rl_* prebuilt binaries
+lean_pruned:    34 top-level entries
+                These are project-internal working material (experiment reports,
+                planning documents, working notes, stale build logs, dev-only
+                scripts and verification data). They are not build inputs and
+                not addressed to a judge.
+
+The engine source tree, build.zig and every checked-in asset come from
+zmix-1.0, the zmix 1.0 artifact. The overlay carries ONLY build
+scripts and documentation; all five SHIP_RECIPE.env recipe keys were
+asserted byte-identical across the two refs before packaging.
+
+There is no .git directory in a submission source package, so the tree pin is
+the git-free ZMIX_SRC_DIGEST over src/ + third_party/ + build.zig + build.zig.zon,
+computed by construct_ship.sh's zmix_src_digest() — the single definition, which
+make_package.sh extracts from this package rather than reimplementing. It was asserted
+here against the STAGED tree and construct_ship.sh recomputes it during the
+judge's own build, where ZMIX_TREE_PIN_MODE=strict is therefore usable.

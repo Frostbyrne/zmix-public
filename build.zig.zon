@@ -1,0 +1,12 @@
+.{
+    .name = .zmix,
+    .version = "0.1.0",
+    .fingerprint = 0x8f28ee7765fe7d34,
+    .minimum_zig_version = "0.15.1",
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+    },
+    .dependencies = .{},
+}
