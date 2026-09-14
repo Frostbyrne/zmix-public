@@ -18,7 +18,7 @@
 //!       [ decomp_bin ][ dict.comp ][ order.comp ][ HeaderInfo{|dict.comp|,|order.comp|,0} ]
 //!       — construct.sh line 80: `cat cmix_orig comp_dict comp_order header.dat`.
 //!
-//!   `archive9.exe`  (produced by `-e`; self-decodes with no args):
+//!   `archive9`  (produced by `-e`; self-decodes with no args):
 //!       legacy/r1v1: [ decomp_bin ][ dict.comp ][ payload ][ HeaderInfo ]
 //!       r1v2:        [ decomp_bin ][ dict.comp ][ order.comp ][ payload ][ HeaderInfo ]
 //!       r1v2 restore derives its block permutation from the raw order asset, so its
@@ -146,7 +146,7 @@ fn selfDecode(gpa: std.mem.Allocator, out_path: []const u8, seed: i32) !void {
         if (header.tfweights_size > 0) {
             const tw: usize = @intCast(header.tfweights_size);
             // Layout: [ decomp_bin ][ dict ][ payload ][ tfweights ][ header ]
-            // — the blob sits immediately before the trailer in archive9.exe,
+            // — the blob sits immediately before the trailer in archive9,
             // mirroring comp9's `... comp_order ++ comp_tfweights ++ header`.
             const off = fsize - se.HEADER_SIZE - tw;
             const blob = try gpa.alloc(u8, tw);
@@ -207,7 +207,7 @@ fn usage() void {
         \\  -c <in> <out> [<tfw>]  compress a file (no dict; self-compress an asset)
         \\  -d <in> <out> [<tfw>]  decompress a file (no dict)
         \\  -E <enwik9> <bhm_out>  legacy Form-2 experiment: payload-only archive9.bhm
-        \\  -e <enwik9> <out>      full enwik9 compress -> Form-1 self-extracting archive9.exe
+        \\  -e <enwik9> <out>      full enwik9 compress -> Form-1 self-extracting archive9
         \\  -D <out>               full enwik9 decompress (payload from own tail)
         \\  -h <ds> <os> <ps> <out>            write a 12-byte HeaderInfo trailer
         \\  --extract-assets <dict_out> <order_out>   self-extract+decompress the tail assets
@@ -242,7 +242,7 @@ pub fn main() !void {
 
     const args = try std.process.argsAlloc(gpa);
     defer std.process.argsFree(gpa, args);
-    // THE FORM-1 SUBMISSION CONTRACT (RULES rule 2): run archive9.exe with NO
+    // THE FORM-1 SUBMISSION CONTRACT (RULES rule 2): run archive9 with NO
     // arguments and reproduce data9 using only the executable's own embedded
     // dict+payload. Never probe the working directory for archive9.bhm (or any
     // other input): an unrelated file must not alter the judged operation.
@@ -516,18 +516,18 @@ pub fn main() !void {
 
             // ---- the dictionary: CARRIED (stock) or DERIVED (Arm E′) ----------
             // Form-1 charges every carried asset TWICE (once in comp9, once in
-            // archive9.exe) but a DERIVED asset only once, because only the
+            // archive9) but a DERIVED asset only once, because only the
             // ENCODER has the corpus to derive from — at decode time enwik9 is
             // the output, not an input. So the asymmetric split is forced and is
             // exactly where the +32,034 B comes from:
             //
             //   comp9        = bin ++ R_E′.comp (~65.8 KB) ++ order.comp ++ hdr
-            //   archive9.exe = bin ++ dict.comp (100,788)  ++ payload    ++ hdr
+            //   archive9 = bin ++ dict.comp (100,788)  ++ payload    ++ hdr
             //
             // i.e. comp9's dict slot holds the RECIPE, and `-e` must (1) decode
             // the recipe, (2) rebuild english.dic bit-exactly from the corpus,
             // (3) self-compress the rebuilt dict with our OWN codec to produce
-            // the dict.comp that archive9.exe carries for the decoder, and
+            // the dict.comp that archive9 carries for the decoder, and
             // (4) code the payload against the rebuilt dict as usual.
             //
             // Step 3 reproduces `construct_ship.sh`'s `-c english.dic dict.comp`
@@ -561,7 +561,7 @@ pub fn main() !void {
             const order = try decodeOrderAsset(gpa, segs.order_comp, seed);
             defer gpa.free(order);
 
-            // archive9.exe always carries the REAL compressed dictionary: under
+            // archive9 always carries the REAL compressed dictionary: under
             // Arm E′ that is the one just derived+self-compressed, otherwise the
             // copy comp9 carries verbatim.
             const archive_dict_comp: []const u8 = derived_dict_comp orelse segs.dict_comp;
@@ -573,7 +573,7 @@ pub fn main() !void {
                 .embedded
             else
                 .omitted;
-            // transformer-era: carry OUR OWN weights blob through into archive9.exe.
+            // transformer-era: carry OUR OWN weights blob through into archive9.
             // Without this the archive's trailer reads tfweights_size=0 and
             // `selfDecode` returns error.MissingEmbeddedWeights — i.e. the
             // no-argument rule-2 contract cannot be satisfied at all.

@@ -2290,7 +2290,7 @@ pub fn build(b: *std.Build) void {
     ship_step.dependOn(&b.addInstallArtifact(ship, .{}).step);
 
     // form1 — minimal no-CLI dual-role prefix for the strict Form-1 submission.
-    // Its own trailer selects comp9 (payload size zero) versus archive9.exe
+    // Its own trailer selects comp9 (payload size zero) versus archive9
     // (payload size nonzero), so exactly the same prefix is counted in both.
     // R1v1 is required: the archive layout intentionally omits the order asset.
     const form1 = b.addExecutable(.{

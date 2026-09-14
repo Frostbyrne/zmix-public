@@ -442,7 +442,7 @@ pub const Form1PairSizes = struct {
 /// Verify that two complete images are a physical Form-1 pair:
 ///
 ///   comp9        = decomp_bin ++ comp_dict ++ comp_order ++ header
-///   archive9.exe = decomp_bin ++ comp_dict ++ [comp_order] ++ payload ++ header
+///   archive9 = decomp_bin ++ comp_dict ++ [comp_order] ++ payload ++ header
 ///
 /// In particular, every repeated prefix component must be byte-identical. The
 /// order bytes are omitted for legacy/r1v1 and repeated for the r1v2 alternate.

@@ -3,7 +3,7 @@
 //! The SAME executable prefix has two self-selected roles:
 //!
 //!   comp9:        [prefix][dict.comp][order.comp][trailer payload_size=0]
-//!   archive9.exe: [prefix][dict.comp][payload][trailer payload_size>0]
+//!   archive9:     [prefix][dict.comp][payload][trailer payload_size>0]
 //!
 //! transformer-era (`-Dtransformer`) appends the int4 weights blob as the LAST segment
 //! before the trailer in BOTH roles, and the trailer widens to 16 bytes to
@@ -11,7 +11,7 @@
 //! fx2-cmix-transformer's own `-h <dict> <order> 0 <tfweights>` form):
 //!
 //!   comp9:        [prefix][dict.comp][order.comp][tfweights][trailer(16)]
-//!   archive9.exe: [prefix][dict.comp][payload][tfweights][trailer(16)]
+//!   archive9:     [prefix][dict.comp][payload][tfweights][trailer(16)]
 //!
 //! Every offset in this file is computed from the TAIL BACKWARDS, so omitting
 //! `tfweights_size` from the arithmetic does not fail loudly — it silently
@@ -25,8 +25,8 @@
 //! neither `-h` nor an explicit-path weights source, which is what
 //! `weights_embedded_only` below states.
 //!
-//! Running comp9 reads fixed `enwik9` and writes fixed `archive9.exe`. Running
-//! archive9.exe writes fixed `data9`. The trailer selects the role, so the
+//! Running comp9 reads fixed `enwik9` and writes fixed `archive9`. Running
+//! archive9 writes fixed `data9`. The trailer selects the role, so the
 //! submitted prefix needs no CLI, Form-2 path, asset encoder, or diagnostics.
 //! `construct_form1.sh --minimal-prefix` assembles comp9 by replacing only the
 //! full helper's executable prefix and preserving its exact dict/order/header
@@ -229,7 +229,7 @@ fn writeArchive(
         .decomp_input_size = @intCast(payload.len),
         .tfweights_size = @intCast(tfweights_comp.len),
     });
-    const out = try std.fs.cwd().createFile("archive9.exe", .{ .mode = 0o755 });
+    const out = try std.fs.cwd().createFile("archive9", .{ .mode = 0o755 });
     defer out.close();
     try out.writeAll(prefix);
     try out.writeAll(dict_comp);
@@ -258,7 +258,7 @@ fn compress(gpa: std.mem.Allocator, f: std.fs.File, file_size: u64, header: se.H
     const prefix = image[0..prefix_end];
     const dict_comp = image[prefix_end..dict_end];
     const order_comp = image[dict_end..second_end];
-    // transformer-era: comp9's own blob, which archive9.exe must carry verbatim. Empty on
+    // transformer-era: comp9's own blob, which archive9 must carry verbatim. Empty on
     // LSTM-era (`sizes.tfweights` is a comptime 0 there, so `tfw_end == second_end`).
     // `image` is freed only at the end of this function, so the slice outlives
     // both the coder calls that need the weights and `writeArchive`.
