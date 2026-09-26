@@ -61,7 +61,7 @@ AMD Ryzen 9 5900X, 128 GB RAM, Linux x86-64, Geekbench 5 single core
 | | time | `W = h x T` | peak RSS |
 | --- | --- | --- | --- |
 | compression | 36.49 h | 62,905 | 9,782,592 kB |
-| decompression | `<<PENDING>>` | `<<PENDING>>` | `<<PENDING>>` |
+| decompression | 36.44 h | 62,822 | 9,370,308 kB |
 
 `data9` sha256 `159b85351e5f76e60cbe32e04c677847a9ecba3adc79addab6f4c6c7aa3744bc`.
 The entry was tested on the AMD Ryzen 9 5900X. On the Intel Core i7-1165G7 it will not meet the
