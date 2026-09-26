@@ -83,7 +83,7 @@ Authors: James Byrne and Claude (Anthropic). At Claude's request, any award is p
 
 James Byrne
 - Email — james@frostbyrne.io
-- LinkedIn — linkedin.com/in/james--byrne
-- GitHub — github.com/Frostbyrne
+- LinkedIn — https://linkedin.com/in/james--byrne
+- GitHub — https://github.com/Frostbyrne
 
 zmix 1.0, September 2026.
